@@ -1,0 +1,379 @@
+* {
+    position: relative;
+    box-sizing: border-box;
+}
+html, body {
+    padding: 0;
+    margin: 0;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    line-height: 24px;
+    font-weight: 400;
+    /* overflow: hidden; */
+}
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    color: #fff;
+    background-color: #1D212D;
+}
+body.dark-theme {
+    background-color: #333;
+}
+.dark-theme * {
+    color: #fff;
+}
+main {
+    flex: 1;
+}
+.site-header, .site-footer{
+    background-color: #000;
+}
+button.download{
+    background-color: #FFE04A;
+    border-radius: 20px;
+    padding: 8px 15px;
+}
+.main-section {
+    padding: 20px 0;
+    max-width: 1280px;
+    width: 100%;
+    margin: 0 auto;
+}
+h1, h2, h3, h4, h5, h6 {
+    font-family: "Gothic A1", sans-serif;
+    font-weight: 900;
+}
+h1, h2, h3, h4, h5, h6, p {
+    margin: 0;
+}
+.box {
+    max-width: 1280px;
+    width: 100%;
+    display: block;
+    margin: 0 auto;
+}
+.box-header {
+    margin-left: 6%;
+    z-index: 2;
+}
+.box-header h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #000;
+    font-size: 40px;
+    line-height: 40px;
+    width: 100%;
+    text-align: center;
+    margin-top: 8px;
+}
+.box-body {
+    margin-top: -80px;
+}
+.box-body-inner {
+    padding: 9% 9% 0%;
+    min-height: 400px;
+}
+.frame.frame-body {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    transform-origin: center top;
+}
+.frame.frame-body .mobile-frame{
+    max-height: 430px;
+}
+.official-links, .link-item  {
+    display: flex;
+}
+.official-links {
+    flex-direction: column;
+    gap: 20px;
+}
+.link-item {
+    flex-direction: row;
+    align-items: stretch;
+    gap: 3px;
+}
+.link-column {
+    text-align: center;
+    padding: 14px 16px;
+    background: #fff;
+    padding: 5px;
+}
+.link-column-inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(263.61deg, #00B1FF -6.2%, #006A99 89.7%);
+    padding: 14px;
+}
+.link-column p {
+    font-size: 28px;
+    line-height: 28px;
+}
+.link-column.column-left p, .btn-download {
+    font-size: 23px;
+    line-height: 23px;
+}
+.link-column.column-left {
+    border-top-left-radius: 20px;
+    border-bottom-left-radius: 20px;
+}
+.link-column.column-left .link-column-inner {
+    border-top-left-radius: 14px;
+    border-bottom-left-radius: 14px;
+}
+.link-column.column-right {
+    border-top-right-radius: 20px;
+    border-bottom-right-radius: 20px;
+}
+.link-column.column-right .link-column-inner {
+    border-top-right-radius: 14px;
+    border-bottom-right-radius: 14px;
+    padding-right: 50px;
+}
+.link-column .caret-right {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    width: 20px;
+    height: auto;
+    animation: jiggle 2.25s infinite;
+    animation-delay: 0.25s;
+}
+.link-item:nth-child(2) .caret-right {
+    animation-delay: 0.75s;
+}
+.link-item:nth-child(3) .caret-right {
+    animation-delay: 1.25s;
+}
+.link-item:nth-child(4) .caret-right {
+    animation-delay: 1.75s;
+}
+.link-column .caret-right:hover {
+    opacity: 0.8;
+}
+@keyframes jiggle {
+    0% { transform: translateX(0) rotate(0)}
+    35% { transform: translateY(0) rotate(0)}
+    85% { transform: translateY(0) rotate(0) }
+    89% { transform: translateY(-2px) rotate(-17deg) }
+    93% { transform: translateY(-3px) rotate(17deg) }
+    98% { transform: translateY(-4px) rotate(-17deg) }
+    100% { transform: translateY(0) rotate(0) }
+}
+.btn-animation {
+    transform-origin: center center;
+    animation: buttonPulse 0.7s infinite alternate;
+}
+@keyframes buttonPulse {
+    100% {
+        transform: scale(0.9);
+    }
+}
+.btn.btn-download {
+    gap: 10px;
+    padding: 5px 20px;
+    border-radius: 20px;
+    border: 1px solid #133F5B;
+    background-color: #00B1FF;
+    color: #000;
+    text-align: center;
+    font-weight: 900;
+}
+.btn.btn-download, .icon-android {
+    transition: all 0.3s ease;
+}
+.icon-android {
+    display: block;
+    width: 45px;
+    height: auto;
+}
+.btn.btn-download:hover {
+    color: #fff;
+    background-color: transparent;
+}
+.btn.btn-download:hover .icon-android {
+    filter: invert(1);
+}
+
+@media (max-width: 767px) {
+    .navbar-brand {
+        width: 180px;
+    }
+    .navbar-brand img {
+        width: 100%;
+    }
+    .box-header {
+        width: 50%;
+        margin: 0 auto;
+    }
+    .box-header h2 {
+        font-size: 24px;
+        line-height: 24px;
+        margin-top: 3px;
+    }
+    .box-body {
+        margin-top: -50px;
+    }
+    .link-column.column-left p, .link-column.column-right p, .btn-download {
+        font-size: 18px;
+        line-height: 18px;
+    }
+    .box-body-inner {
+        padding: 80px 50px 0px;
+    }
+    .official-links {
+        gap: 12px;
+    }
+    .link-column-inner {
+        padding: 10px 14px;
+    }
+    .link-column .caret-right {
+        right: 15px;
+        width: 14px;
+        top: 6px;
+    }
+    .link-column.column-left {
+        border-top-left-radius: 10px;
+        border-bottom-left-radius: 10px;
+    }
+    .link-column.column-left .link-column-inner {
+        border-top-left-radius: 6px;
+        border-bottom-left-radius: 6px;
+    }
+    .link-column.column-right {
+        border-top-right-radius: 10px;
+        border-bottom-right-radius: 10px;
+    }
+    .link-column.column-right .link-column-inner {
+        border-top-right-radius: 6px;
+        border-bottom-right-radius: 6px;
+    }
+    .icon-android {
+        width: 25px;
+    }
+    .btn.btn-download {
+        padding-top: 10px;
+        padding-bottom: 10px;
+    }
+    .frame.frame-body {
+        transform: scaleY(1);
+    }
+    .frame.frame-body .mobile-frame{
+        max-height: 570px;
+    }
+    .site-footer .gaming svg{
+        width: 40px;
+        height: 40px;
+    }
+}
+@media (max-width: 378px) {
+    .link-column-inner {
+        padding: 8px;
+    }
+    .box-body-inner {
+        padding: 80px 40px 0;
+    }
+    .link-column.column-left p, .link-column.column-right p, .btn-download {
+        font-size: 12px;
+        line-height: 12px;
+    }
+}
+@media (max-width: 351px) {
+    .frame.frame-body {
+        transform: scaleY(1.1);
+    }
+}
+@media (min-width: 768px) {}
+@media (max-width: 991px) {}
+@media (min-width: 768px) and (max-width: 1199px) and (orientation: portrait) {
+    .box-header {
+        margin: auto;
+    }
+    .box-header h2 {
+        font-size: 32px;
+        line-height: 32px;
+    }
+    .box-body-inner {
+        padding: 20% 15% 5%;
+    }
+    .link-column.column-left p, .btn-download {
+        font-size: 18px;
+        line-height: 18px;
+    }
+    .link-column p {
+        font-size: 24px;
+        line-height: 24px;
+    }
+    .link-column .caret-right {
+        width: 18px;
+    }
+    .frame.frame-body {
+        transform: scaleY(0.9);
+    }
+    .frame.frame-body .mobile-frame{
+        max-height: 820px;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px) and (orientation: portrait) {
+    .box {
+        max-width: 650px;
+    }
+    .box .box-header {
+        width: 50%;
+    }
+    .box .box-body .box-body-inner > .d-flex > .col-12 {
+        width: 100%;
+        padding-left: 0!important;
+    }
+    .box .banner {
+        margin-top: 24px;
+    }
+    .frame.frame-body .mobile-frame{
+        max-height: 900px;
+    }
+}
+@media (min-width: 992px) and (max-width: 1199px) and (orientation: landscape) {
+    .box-header h2 {
+        font-size: 32px;
+        line-height: 32px;
+    }
+    .box-body {
+        margin-top: -50px;
+    }
+    .box-body-inner {
+        min-height: unset;
+        padding: 9%;
+    }
+    .frame.frame-body {
+        transform: scaleY(1.08);
+    }
+    .link-column.column-left p, .btn-download {
+        font-size: 16px;
+        line-height: 16px;
+    }
+    .link-column-inner {
+        padding: 10px;
+    }
+    .link-column p {
+        font-size: 24px;
+        line-height: 24px;
+    }
+    .link-column .caret-right {
+        width: 20px;
+    }
+}
+@media (min-width: 992px) {}
+@media (max-width: 1199px) {}
+@media (min-width: 1200px) {}
+@media (min-width: 1800px) {}
