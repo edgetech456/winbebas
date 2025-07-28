@@ -200,7 +200,7 @@ h1, h2, h3, h4, h5, h6, p {
 }
 .btn.btn-download:hover {
     color: #fff;
-    background-color: transparent;
+    background-color: #133F5B;
 }
 .btn.btn-download:hover .icon-android {
     filter: invert(1);
